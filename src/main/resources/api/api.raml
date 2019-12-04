@@ -1,0 +1,60 @@
+#%RAML 1.0
+title: api
+
+uses:
+  library: !include muletest2.raml
+
+/humans:
+  post:
+    body:
+      application/json:
+        type: library.Human
+  get:
+    responses:
+      200:
+        body:
+          application/json:
+            type: library.Human[]
+            example:
+                -
+                  Identification:
+                    FirstName: bart
+                    LastName: simpson
+                    DOB: 12/28/90
+                    Gender: Male
+                    Title: Dr.
+                  Address:
+                     - # start item 1 of array
+                      'type ': home
+                      number: 1234
+                      street: evergreen st
+                      Unit: 1s
+                      City: springfield
+                      State: missouri
+                      zipcode: "22101"
+                  Communication:
+                     - # start item 1 of array
+                      type: email
+                      value: myemail@yo.com
+                      preferred: "true"
+                -
+                   Identification:
+                    FirstName: chief
+                    LastName: wiggum
+                    DOB: 8/28/70
+                    Gender: Male
+                    Title: officer
+                   Address:
+                     - # start item 1
+                      'type ': home
+                      number: 2345
+                      street: police st
+                      Unit: 2s
+                      City: springfield
+                      State: missouri
+                      zipcode: "22101"
+                   Communication:
+                     - # start item 1
+                      type: email
+                      value: wiggum@yo.com
+                      preferred: "true"

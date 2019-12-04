@@ -1,0 +1,125 @@
+#%RAML 1.0
+title: muletest2
+version: 1.0
+mediaType: application/json
+types:
+  Human:
+    displayName: The Root Schema
+    type: object
+    additionalProperties: true
+    properties:
+      Identification:
+        displayName: The Identification Schema
+        type: object
+        additionalProperties: true
+        properties:
+          FirstName:
+            displayName: The Firstname Schema
+            default: ''
+            type: string
+            pattern: (.*)
+            required: true
+          LastName:
+            displayName: The Lastname Schema
+            default: ''
+            type: string
+            pattern: (.*)
+            required: true
+          DOB:
+            displayName: The Dob Schema
+            default: ''
+            type: string
+            pattern: (.*)
+            required: true
+          Gender:
+            displayName: The Gender Schema
+            default: ''
+            type: string
+            pattern: (.*)
+            required: true
+          Title:
+            displayName: The Title Schema
+            default: ''
+            type: string
+            pattern: (.*)
+            required: true
+        required: true
+      Address:
+        displayName: The Address Schema
+        type: array
+        items:
+          displayName: The Items Schema
+          type: object
+          additionalProperties: true
+          properties:
+            'type ':
+              displayName: The Type  Schema
+              default: ''
+              type: string
+              pattern: (.*)
+              required: true
+            number:
+              displayName: The Number Schema
+              default: 0
+              type: integer
+              required: true
+            street:
+              displayName: The Street Schema
+              default: ''
+              type: string
+              pattern: (.*)
+              required: true
+            Unit:
+              displayName: The Unit Schema
+              default: ''
+              type: string
+              pattern: (.*)
+              required: true
+            City:
+              displayName: The City Schema
+              default: ''
+              type: string
+              pattern: (.*)
+              required: true
+            State:
+              displayName: The State Schema
+              default: ''
+              type: string
+              pattern: (.*)
+              required: true
+            zipcode:
+              displayName: The Zipcode Schema
+              default: ''
+              type: string
+              pattern: (.*)
+              required: true
+        required: true
+      Communication:
+        displayName: The Communication Schema
+        type: array
+        items:
+          displayName: The Items Schema
+          type: object
+          additionalProperties: true
+          properties:
+            type:
+              displayName: The Type Schema
+              default: ''
+              type: string
+              pattern: (.*)
+              required: true
+            value:
+              displayName: The Value Schema
+              default: ''
+              type: string
+              pattern: (.*)
+              required: true
+            preferred:
+              displayName: The Preferred Schema
+              default: ''
+              type: string
+              pattern: (.*)
+              required: true
+        required: true
+securitySchemes:
+  
